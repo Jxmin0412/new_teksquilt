@@ -10,8 +10,8 @@ import { Button } from "@/components/ui/button";
 const Home: React.FC = () => {
   return (
     <div>
-      <section className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/50 z-10" />
+      <section className="relative h-screen flex items-center justify-center text-center text-white">
+        <div className="absolute inset-0 bg-black opacity-50 z-10" />
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"
           src="/hero-video.mp4"
@@ -31,12 +31,14 @@ const Home: React.FC = () => {
           </Button>
         </div>
       </section>
-      <Services />
-      <Jobs />
-      <CompanyLogos />
-      <Testimonials />
-      <Newsletter />
-      <Articles />
+      <div className="relative z-20 bg-background">
+        <Services />
+        <Jobs />
+        <CompanyLogos />
+        <Testimonials />
+        <Newsletter />
+        <Articles />
+      </div>
     </div>
   );
 };

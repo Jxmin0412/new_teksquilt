@@ -19,21 +19,32 @@ const config = {
       },
     },
     extend: {
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+      colors: {
+        background: "#0a0a0a",
+      },
+      backgroundImage: {
+          "gradient-1": "linear-gradient(to right, #004d40, #00251a)",
+          "gradient-2": "linear-gradient(to right, #ffab40, #ff6d00)",
+          "gradient-3": "linear-gradient(to right, #e0e0e0, #9e9e9e)",
+
+          "gradient-blue": "linear-gradient(to right, #1e3a8a, #1e40af)",
+          "gradient-green": "linear-gradient(to right, #047857, #059669)",
         },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+        keyframes: {
+          "accordion-down": {
+            from: { height: "0" },
+            to: { height: "var(--radix-accordion-content-height)" },
+          },
+          "accordion-up": {
+            from: { height: "var(--radix-accordion-content-height)" },
+            to: { height: "0" },
+          },
+        },
+        animation: {
+          "accordion-down": "accordion-down 0.2s ease-out",
+          "accordion-up": "accordion-up 0.2s ease-out",
         },
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
-    },
   },
   plugins: [tailwindcssAnimate],
 } satisfies Config
