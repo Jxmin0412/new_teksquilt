@@ -44,7 +44,7 @@ const JobsPage: React.FC = () => {
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-8">Available Roles</h1>
         <div className="flex items-center justify-center space-x-2 mb-8">
-          <Label htmlFor="remote-only">Show Remote Only</Label>
+          <Label>Show Remote Only</Label>
           <Switch
             id="remote-only"
             checked={showRemoteOnly}
