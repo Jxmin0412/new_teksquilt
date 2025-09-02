@@ -26,7 +26,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link
           to="/"
-          className={`text-2xl font-bold ${
+          className={`text-2xl font-bold bg-gradient-to-br from-white via-cyan-100 to-cyan-500 text-transparent bg-clip-text ${
             scrolled ? "text-black" : "text-white"
           }`}
         >

@@ -16,8 +16,12 @@ const AboutPage: React.FC = () => {
   };
 
   return (
-    <div className="bg-white text-black  py-24">
-      <div className="container mx-auto px-4">
+    <div
+      className="relative bg-cover bg-center py-24"
+      style={{ backgroundImage: "url('/hero5.jpg')" }}
+    >
+      <div className="absolute inset-0 bg-black opacity-70 z-0" />
+      <div className="relative z-10 container mx-auto px-4 text-white">
         <h1 className="text-4xl font-bold text-center mb-16">
           About Teksquilt
         </h1>
@@ -35,14 +39,14 @@ const AboutPage: React.FC = () => {
             initial="hidden"
             animate="visible"
             variants={cardVariants}
-            className="transform hover:scale-105 transition-transform duration-300"
+            className="group transform hover:scale-105 transition-transform duration-300 hover:bg-hoverColor1"
           >
-            <Card className="border-gray-700 h-full">
+            <Card className="bg-gray-800 border-gray-700 h-full">
               <CardHeader>
                 <CardTitle>Our Mission</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-900">
+                <p className="text-gray-300">
                   Our mission is to provide exceptional staffing solutions that
                   are tailored to the unique needs of our clients. We strive to
                   be a trusted partner for both businesses and job seekers, and
@@ -57,14 +61,14 @@ const AboutPage: React.FC = () => {
             initial="hidden"
             animate="visible"
             variants={cardVariants}
-            className="transform hover:scale-105 transition-transform duration-300"
+            className="group transform hover:scale-105 transition-transform duration-300 hover:bg-hoverColor2"
           >
-            <Card className=" border-gray-700 h-full">
+            <Card className="bg-gray-800 border-gray-700 h-full">
               <CardHeader>
                 <CardTitle>Our Services</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-900">
+                <p className="text-gray-300">
                   We offer a wide range of staffing services, including
                   permanent placement, contract staffing, and recruitment
                   process outsourcing. Our team of experienced recruiters has a
@@ -80,14 +84,14 @@ const AboutPage: React.FC = () => {
             initial="hidden"
             animate="visible"
             variants={cardVariants}
-            className="transform hover:scale-105 transition-transform duration-300"
+            className="group transform hover:scale-105 transition-transform duration-300 hover:bg-hoverColor3"
           >
-            <Card className=" border-gray-700 h-full">
+            <Card className="bg-gray-800 border-gray-700 h-full">
               <CardHeader>
                 <CardTitle>Target Audience</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-900">
+                <p className="text-gray-300">
                   We work with businesses of all sizes, from startups to Fortune
                   500 companies. Our target audience includes companies in the
                   technology, healthcare, and creative industries. We also work

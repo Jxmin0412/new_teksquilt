@@ -33,8 +33,8 @@ const Home: React.FC = () => {
       </section>
       <div className="relative z-20 bg-background">
         <Services />
-        <Jobs />
         <CompanyLogos />
+        <Jobs />
         <Testimonials />
         <Newsletter />
         <Articles />

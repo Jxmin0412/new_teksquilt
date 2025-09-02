@@ -12,7 +12,7 @@ const CompanyLogos: React.FC = () => {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       transition={{ duration: 0.5 }}
-      className="py-24 bg-white"
+      className="py-24 bg-gradient-to-br from-white via-cyan-100 to-cyan-400  "
     >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-16 text-balance">

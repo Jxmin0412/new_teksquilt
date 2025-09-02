@@ -21,6 +21,13 @@ const config = {
     extend: {
       colors: {
         background: "#0a0a0a",
+        autumnYellow: "#FFA500", // Added autumn yellow
+        hoverColor1: "#FFD700", // Gold
+        hoverColor2: "#00CED1", // Dark Turquoise
+        hoverColor3: "#FF6347", // Tomato
+        instagram: "#E4405F",
+        facebook: "#1877F2",
+        linkedin: "#0A66C2",
       },
       backgroundImage: {
           "gradient-1": "linear-gradient(to right, #004d40, #00251a)",
