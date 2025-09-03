@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  Building, 
-  Send, 
-  Sparkles, 
+import {
+  Building,
+  Send,
+  Sparkles,
   CheckCircle,
   Users,
   MapPin,
   Phone,
   Mail,
   Briefcase,
-  ArrowRight
+  ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -31,16 +31,20 @@ const EmployerForm: React.FC = () => {
     positionType: "",
     experience: "",
     skills: "",
-    description: ""
+    description: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -48,7 +52,7 @@ const EmployerForm: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     setIsSubmitting(false);
     setIsSubmitted(true);
     // Reset after 5 seconds
@@ -67,7 +71,7 @@ const EmployerForm: React.FC = () => {
         positionType: "",
         experience: "",
         skills: "",
-        description: ""
+        description: "",
       });
     }, 5000);
   };
@@ -92,7 +96,7 @@ const EmployerForm: React.FC = () => {
               <Building className="w-4 h-4" />
               <span>For Employers</span>
             </div>
-            
+
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                 Find Your Perfect
@@ -102,9 +106,10 @@ const EmployerForm: React.FC = () => {
                 Team Member
               </span>
             </h1>
-            
+
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-              Tell us about your hiring needs and we'll connect you with the best talent in the industry.
+              Tell us about your hiring needs and we'll connect you with the
+              best talent in the industry.
             </p>
           </motion.div>
         </div>
@@ -125,8 +130,12 @@ const EmployerForm: React.FC = () => {
                   <Briefcase className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900">Employer Information</h2>
-                  <p className="text-gray-600">Fill out the form below to get started</p>
+                  <h2 className="text-2xl font-bold text-gray-900">
+                    Employer Information
+                  </h2>
+                  <p className="text-gray-600">
+                    Fill out the form below to get started
+                  </p>
                 </div>
               </div>
 
@@ -139,7 +148,10 @@ const EmployerForm: React.FC = () => {
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="companyName" className="text-gray-700 mb-2 block">
+                      <Label
+                        htmlFor="companyName"
+                        className="text-gray-700 mb-2 block"
+                      >
                         Company Name *
                       </Label>
                       <Input
@@ -154,7 +166,10 @@ const EmployerForm: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="contactPerson" className="text-gray-700 mb-2 block">
+                      <Label
+                        htmlFor="contactPerson"
+                        className="text-gray-700 mb-2 block"
+                      >
                         Contact Person *
                       </Label>
                       <Input
@@ -169,7 +184,10 @@ const EmployerForm: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="email" className="text-gray-700 mb-2 block">
+                      <Label
+                        htmlFor="email"
+                        className="text-gray-700 mb-2 block"
+                      >
                         Email Address *
                       </Label>
                       <Input
@@ -184,7 +202,10 @@ const EmployerForm: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="phone" className="text-gray-700 mb-2 block">
+                      <Label
+                        htmlFor="phone"
+                        className="text-gray-700 mb-2 block"
+                      >
                         Phone Number *
                       </Label>
                       <Input
@@ -199,7 +220,10 @@ const EmployerForm: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="website" className="text-gray-700 mb-2 block">
+                      <Label
+                        htmlFor="website"
+                        className="text-gray-700 mb-2 block"
+                      >
                         Company Website
                       </Label>
                       <Input
@@ -213,7 +237,10 @@ const EmployerForm: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="location" className="text-gray-700 mb-2 block">
+                      <Label
+                        htmlFor="location"
+                        className="text-gray-700 mb-2 block"
+                      >
                         Location *
                       </Label>
                       <Input
@@ -228,7 +255,10 @@ const EmployerForm: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="industry" className="text-gray-700 mb-2 block">
+                      <Label
+                        htmlFor="industry"
+                        className="text-gray-700 mb-2 block"
+                      >
                         Industry *
                       </Label>
                       <select
@@ -250,7 +280,10 @@ const EmployerForm: React.FC = () => {
                       </select>
                     </div>
                     <div>
-                      <Label htmlFor="companySize" className="text-gray-700 mb-2 block">
+                      <Label
+                        htmlFor="companySize"
+                        className="text-gray-700 mb-2 block"
+                      >
                         Company Size *
                       </Label>
                       <select
@@ -281,7 +314,10 @@ const EmployerForm: React.FC = () => {
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="positionTitle" className="text-gray-700 mb-2 block">
+                      <Label
+                        htmlFor="positionTitle"
+                        className="text-gray-700 mb-2 block"
+                      >
                         Position Title *
                       </Label>
                       <Input
@@ -296,7 +332,10 @@ const EmployerForm: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="positionType" className="text-gray-700 mb-2 block">
+                      <Label
+                        htmlFor="positionType"
+                        className="text-gray-700 mb-2 block"
+                      >
                         Position Type *
                       </Label>
                       <select
@@ -316,7 +355,10 @@ const EmployerForm: React.FC = () => {
                       </select>
                     </div>
                     <div>
-                      <Label htmlFor="experience" className="text-gray-700 mb-2 block">
+                      <Label
+                        htmlFor="experience"
+                        className="text-gray-700 mb-2 block"
+                      >
                         Experience Level *
                       </Label>
                       <select
@@ -336,7 +378,10 @@ const EmployerForm: React.FC = () => {
                       </select>
                     </div>
                     <div>
-                      <Label htmlFor="skills" className="text-gray-700 mb-2 block">
+                      <Label
+                        htmlFor="skills"
+                        className="text-gray-700 mb-2 block"
+                      >
                         Required Skills
                       </Label>
                       <Input
@@ -351,7 +396,10 @@ const EmployerForm: React.FC = () => {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <Label htmlFor="description" className="text-gray-700 mb-2 block">
+                    <Label
+                      htmlFor="description"
+                      className="text-gray-700 mb-2 block"
+                    >
                       Additional Requirements
                     </Label>
                     <textarea
@@ -372,8 +420,8 @@ const EmployerForm: React.FC = () => {
                   disabled={isSubmitting || isSubmitted}
                   className={cn(
                     "w-full py-3 rounded-xl font-medium transition-all duration-300",
-                    isSubmitted 
-                      ? "bg-green-500 hover:bg-green-600" 
+                    isSubmitted
+                      ? "bg-green-500 hover:bg-green-600"
                       : "bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 hover:from-blue-700 hover:via-cyan-600 hover:to-blue-700",
                     "text-white"
                   )}
@@ -408,7 +456,7 @@ const EmployerForm: React.FC = () => {
               >
                 <Phone className="w-8 h-8 text-blue-600 mx-auto mb-3" />
                 <h4 className="font-semibold text-gray-900 mb-1">Call Us</h4>
-                <p className="text-gray-600">+1 (234) 567-890</p>
+                <p className="text-gray-600"> +1 972-837-7530</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -418,7 +466,7 @@ const EmployerForm: React.FC = () => {
               >
                 <Mail className="w-8 h-8 text-blue-600 mx-auto mb-3" />
                 <h4 className="font-semibold text-gray-900 mb-1">Email Us</h4>
-                <p className="text-gray-600">employers@teksquilt.com</p>
+                <p className="text-gray-600">contact@teksquilt.com</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -428,7 +476,7 @@ const EmployerForm: React.FC = () => {
               >
                 <MapPin className="w-8 h-8 text-blue-600 mx-auto mb-3" />
                 <h4 className="font-semibold text-gray-900 mb-1">Visit Us</h4>
-                <p className="text-gray-600">San Francisco, CA</p>
+                <p className="text-gray-600">Plano, TX </p>
               </motion.div>
             </div>
           </motion.div>

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import Services from "../components/Services";
 import Jobs from "../components/Jobs";
 import Testimonials from "../components/Testimonials";
@@ -10,6 +11,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, TrendingUp } from "lucide-react";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -97,6 +100,7 @@ const Home = () => {
               >
                 <Button
                   size="lg"
+                  onClick={() => navigate("/employer-form")}
                   className="group bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 hover:from-blue-700 hover:via-cyan-600 hover:to-blue-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   Find Talent
@@ -105,6 +109,7 @@ const Home = () => {
                 <Button
                   size="lg"
                   variant="outline"
+                  onClick={() => navigate("/jobs")}
                   className="border-2 border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-6 text-lg rounded-xl transition-all duration-300"
                 >
                   Explore Careers
@@ -169,7 +174,7 @@ const Home = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -184,7 +189,7 @@ const Home = () => {
           <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce" />
           </div>
-        </motion.div>
+        </motion.div> */}
       </section>
 
       {/* Main Content Sections */}

@@ -175,7 +175,7 @@ const AboutPage: React.FC = () => {
 
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
                       <Award className="w-6 h-6 text-white" />
                     </div>
                     <h2 className="text-3xl font-bold text-gray-900">
@@ -201,7 +201,7 @@ const AboutPage: React.FC = () => {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/about-image.jpg"
+                  src="/hero5.jpg"
                   alt="Team collaboration"
                   className="w-full h-auto"
                 />

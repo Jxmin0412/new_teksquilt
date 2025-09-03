@@ -7,6 +7,7 @@ import JobsPage from "./pages/JobsPage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import EmployerForm from "./pages/EmployerForm";
+import ResumeSubmission from "./pages/ResumeSubmission";
 import IndustryReports from "./pages/IndustryReports";
 import FAQs from "./pages/FAQs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -24,18 +25,19 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/employer-form" element={<EmployerForm />} />
+          <Route path="/resume-submission" element={<ResumeSubmission />} />
           <Route path="/industry-reports" element={<IndustryReports />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
-        </Route>
 
-        <Route
-          path="*"
-          element={
-            <h1 className="text-3xl font-bold underline">404 Not Found</h1>
-          }
-        />
+          <Route
+            path="*"
+            element={
+              <h1 className="text-3xl font-bold underline">404 Not Found</h1>
+            }
+          />
+        </Route>
       </Routes>
     </Router>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { 
   Mail, 
   Send, 
@@ -33,6 +34,7 @@ const benefits = [
 ];
 
 const Newsletter: React.FC = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -204,9 +206,27 @@ const Newsletter: React.FC = () => {
                   {/* Privacy Note */}
                   <p className="text-xs text-center text-gray-500">
                     By subscribing, you agree to our{" "}
-                    <a href="#" className="text-blue-600 hover:underline">Privacy Policy</a>
+                    <a 
+                      href="/privacy-policy" 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate('/privacy-policy');
+                      }}
+                      className="text-blue-600 hover:underline"
+                    >
+                      Privacy Policy
+                    </a>
                     {" "}and{" "}
-                    <a href="#" className="text-blue-600 hover:underline">Terms of Service</a>
+                    <a 
+                      href="/terms-of-service"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate('/terms-of-service');
+                      }}
+                      className="text-blue-600 hover:underline"
+                    >
+                      Terms of Service
+                    </a>
                   </p>
                 </form>
 
@@ -242,6 +262,7 @@ const Newsletter: React.FC = () => {
             </p>
             <Button
               variant="outline"
+              onClick={() => navigate('/industry-reports')}
               className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
             >
               Browse Archive

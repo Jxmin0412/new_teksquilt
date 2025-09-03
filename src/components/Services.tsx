@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { 
   Briefcase, 
   Users, 
@@ -47,6 +48,7 @@ const services = [
 ];
 
 const Services: React.FC = () => {
+  const navigate = useNavigate();
   const [activeServiceIndex, setActiveServiceIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const activeService = services[activeServiceIndex];
@@ -265,11 +267,14 @@ const Services: React.FC = () => {
 
                     {/* CTA */}
                     <div className="pt-4">
-                      <Button className={cn(
-                        "group bg-gradient-to-r text-white px-6 py-3 rounded-xl",
-                        "hover:shadow-lg transition-all duration-300",
-                        activeService.color
-                      )}>
+                      <Button 
+                        onClick={() => navigate('/services')}
+                        className={cn(
+                          "group bg-gradient-to-r text-white px-6 py-3 rounded-xl",
+                          "hover:shadow-lg transition-all duration-300",
+                          activeService.color
+                        )}
+                      >
                         Learn More
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Button>
@@ -295,6 +300,7 @@ const Services: React.FC = () => {
           <Button 
             size="lg"
             variant="outline"
+            onClick={() => navigate('/contact')}
             className="border-2 border-gray-300 hover:border-gray-400"
           >
             Schedule a Consultation

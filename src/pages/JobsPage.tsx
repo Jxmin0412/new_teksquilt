@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Jobs from "@/components/Jobs";
-import { 
+import {
   Briefcase,
   TrendingUp,
   Users,
@@ -10,15 +10,16 @@ import {
   Sparkles,
   Search,
   Filter,
-  Upload
+  Upload,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const stats = [
   { value: "1000+", label: "Active Jobs", icon: Briefcase },
   { value: "500+", label: "Companies", icon: Users },
   { value: "50+", label: "Cities", icon: Globe },
-  { value: "95%", label: "Placement Rate", icon: TrendingUp }
+  { value: "95%", label: "Placement Rate", icon: TrendingUp },
 ];
 
 const categories = [
@@ -27,10 +28,11 @@ const categories = [
   { name: "Finance", count: 256, trending: true },
   { name: "Marketing", count: 123, trending: false },
   { name: "Sales", count: 201, trending: true },
-  { name: "Operations", count: 167, trending: false }
+  { name: "Operations", count: 167, trending: false },
 ];
 
 const JobsPage: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
@@ -51,7 +53,7 @@ const JobsPage: React.FC = () => {
               <Sparkles className="w-4 h-4" />
               <span>Career Opportunities</span>
             </div>
-            
+
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                 Discover Your
@@ -61,22 +63,23 @@ const JobsPage: React.FC = () => {
                 Dream Career
               </span>
             </h1>
-            
+
             <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Explore thousands of opportunities from leading companies. 
-              Find the perfect role that matches your skills and ambitions.
+              Explore thousands of opportunities from leading companies. Find
+              the perfect role that matches your skills and ambitions.
             </p>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button 
+              <Button
                 size="lg"
+                onClick={() => navigate("/resume-submission")}
                 className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 hover:from-blue-700 hover:via-cyan-600 hover:to-blue-700 text-white"
               >
                 <Upload className="mr-2 w-5 h-5" />
                 Submit Resume
               </Button>
-              <Button 
+              <Button
                 size="lg"
                 variant="outline"
                 className="border-2 border-gray-300 hover:border-gray-400"
@@ -105,14 +108,16 @@ const JobsPage: React.FC = () => {
                 </div>
                 <div className="flex flex-wrap gap-2 mt-4">
                   <span className="text-sm text-gray-600">Popular:</span>
-                  {["Remote", "Full-time", "Senior", "Entry Level"].map((term) => (
-                    <button
-                      key={term}
-                      className="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm text-gray-700 transition-colors"
-                    >
-                      {term}
-                    </button>
-                  ))}
+                  {["Remote", "Full-time", "Senior", "Entry Level"].map(
+                    (term) => (
+                      <button
+                        key={term}
+                        className="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm text-gray-700 transition-colors"
+                      >
+                        {term}
+                      </button>
+                    )
+                  )}
                 </div>
               </div>
             </div>
@@ -137,7 +142,9 @@ const JobsPage: React.FC = () => {
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl mb-3">
                     <Icon className="w-6 h-6 text-blue-600" />
                   </div>
-                  <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {stat.value}
+                  </p>
                   <p className="text-sm text-gray-600">{stat.label}</p>
                 </motion.div>
               );
@@ -229,21 +236,22 @@ const JobsPage: React.FC = () => {
               {
                 step: "1",
                 title: "Create Profile",
-                description: "Build your professional profile and upload your resume",
-                icon: Users
+                description:
+                  "Build your professional profile and upload your resume",
+                icon: Users,
               },
               {
                 step: "2",
                 title: "Browse & Apply",
                 description: "Explore opportunities and apply with one click",
-                icon: Search
+                icon: Search,
               },
               {
                 step: "3",
                 title: "Get Hired",
                 description: "Connect with employers and land your dream job",
-                icon: Briefcase
-              }
+                icon: Briefcase,
+              },
             ].map((item, index) => {
               const Icon = item.icon;
               return (
@@ -263,7 +271,9 @@ const JobsPage: React.FC = () => {
                       {item.step}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {item.title}
+                  </h3>
                   <p className="text-gray-600">{item.description}</p>
                 </motion.div>
               );
@@ -286,17 +296,20 @@ const JobsPage: React.FC = () => {
               Ready to Take the Next Step?
             </h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-              Join thousands of professionals who have found their dream jobs through TekSquilt.
-              Your next opportunity is just a click away.
+              Join thousands of professionals who have found their dream jobs
+              through TekSquilt. Your next opportunity is just a click away.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+              <Button
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-gray-100"
+              >
                 Create Free Account
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="border-2 border-white text-white hover:bg-white/10"
               >
                 Post a Job

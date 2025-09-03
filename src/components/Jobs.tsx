@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   MapPin,
@@ -138,6 +139,7 @@ const departments = [
 const jobTypes = ["All", "Full-time", "Contract", "Remote"];
 
 const Jobs: React.FC = () => {
+  const navigate = useNavigate();
   const [selectedDepartment, setSelectedDepartment] = useState("All");
   const [selectedType, setSelectedType] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
@@ -400,6 +402,7 @@ const Jobs: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
+              onClick={() => navigate('/resume-submission')}
               className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 hover:from-blue-700 hover:via-cyan-600 hover:to-blue-700 text-white"
             >
               Submit Your Resume
@@ -408,6 +411,7 @@ const Jobs: React.FC = () => {
             <Button
               size="lg"
               variant="outline"
+              onClick={() => navigate('/contact')}
               className="border-2 border-gray-300 hover:border-gray-400"
             >
               Create Job Alert
@@ -426,6 +430,8 @@ interface JobCardProps {
 }
 
 const JobCard: React.FC<JobCardProps> = ({ job, index, featured }) => {
+  const navigate = useNavigate();
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -499,7 +505,10 @@ const JobCard: React.FC<JobCardProps> = ({ job, index, featured }) => {
       </div>
 
       {/* Apply Button */}
-      <Button className="w-full group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:via-cyan-500 group-hover:to-blue-600 transition-all duration-300">
+      <Button 
+        onClick={() => navigate('/resume-submission')}
+        className="w-full group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:via-cyan-500 group-hover:to-blue-600 transition-all duration-300"
+      >
         Apply Now
         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
       </Button>

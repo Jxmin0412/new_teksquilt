@@ -62,7 +62,7 @@ const Header: React.FC = () => {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
             ? "bg-white/95 backdrop-blur-md shadow-lg"
-            : "bg-white/80 backdrop-blur-sm"
+            : "bg-white/95 backdrop-blur-sm"
         )}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -124,14 +124,6 @@ const Header: React.FC = () => {
 
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3">
-              <Link to="/employer-form">
-                <Button
-                  variant="outline"
-                  className="border-gray-300 hover:border-gray-400"
-                >
-                  For Employers
-                </Button>
-              </Link>
               <div className="relative" ref={dropdownRef}>
                 <Button
                   className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 hover:from-blue-700 hover:via-cyan-600 hover:to-blue-700 text-white"
