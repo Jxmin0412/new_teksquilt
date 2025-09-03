@@ -128,7 +128,7 @@ const Articles: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-full text-sm font-medium text-purple-700 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-full text-sm font-medium text-blue-700 mb-6">
             <BookOpen className="w-4 h-4" />
             <span>Insights & Resources</span>
           </div>
@@ -137,7 +137,7 @@ const Articles: React.FC = () => {
               Career Insights &
             </span>
             <br />
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent">
               Industry Trends
             </span>
           </h2>
@@ -162,7 +162,7 @@ const Articles: React.FC = () => {
               className={cn(
                 "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
                 selectedCategory === category
-                  ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md"
+                  ? "bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 text-white shadow-md"
                   : "bg-white border border-gray-200 text-gray-700 hover:border-gray-300"
               )}
             >
@@ -183,10 +183,10 @@ const Articles: React.FC = () => {
             <div className="relative group bg-white rounded-3xl shadow-xl overflow-hidden">
               <div className="grid lg:grid-cols-2">
                 {/* Image */}
-                <div className="relative h-64 lg:h-full bg-gradient-to-br from-purple-100 to-pink-100">
+                <div className="relative h-64 lg:h-full bg-gradient-to-br from-blue-100 to-cyan-100">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-white rounded-full text-xs font-medium">
+                    <span className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 text-white rounded-full text-xs font-medium">
                       <Sparkles className="w-3 h-3" />
                       Featured
                     </span>
@@ -196,13 +196,13 @@ const Articles: React.FC = () => {
                 {/* Content */}
                 <div className="p-8 lg:p-10">
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">
+                    <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
                       {featuredArticle.category}
                     </span>
                     <span className="text-sm text-gray-500">{featuredArticle.readTime}</span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                     {featuredArticle.title}
                   </h3>
 
@@ -235,7 +235,7 @@ const Articles: React.FC = () => {
                       </span>
                     </div>
 
-                    <Button className="group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
+                    <Button className="group bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 hover:from-blue-700 hover:via-cyan-600 hover:to-blue-700 text-white">
                       Read More
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
@@ -275,13 +275,13 @@ const Articles: React.FC = () => {
               {/* Content */}
               <div className="p-6 flex-1 flex flex-col">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">
+                  <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
                     {article.category}
                   </span>
                   <span className="text-xs text-gray-500">{article.readTime}</span>
                 </div>
 
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors line-clamp-2">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
                   {article.title}
                 </h3>
 
@@ -318,7 +318,7 @@ const Articles: React.FC = () => {
                     <ArrowRight className={cn(
                       "w-4 h-4 transition-all duration-300",
                       hoveredArticle === article.id 
-                        ? "text-purple-600 translate-x-1" 
+                        ? "text-blue-600 translate-x-1" 
                         : "text-gray-400"
                     )} />
                   </div>
@@ -352,7 +352,7 @@ const Articles: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-16 bg-gradient-to-r from-purple-50 to-pink-50 rounded-3xl p-8 sm:p-10 text-center"
+          className="mt-16 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-8 sm:p-10 text-center"
         >
           <h3 className="text-2xl font-bold text-gray-900 mb-3">
             Don't Miss Our Latest Insights
@@ -360,7 +360,7 @@ const Articles: React.FC = () => {
           <p className="text-gray-600 mb-6">
             Subscribe to our newsletter and get career tips delivered to your inbox weekly.
           </p>
-          <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
+          <Button className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 hover:from-blue-700 hover:via-cyan-600 hover:to-blue-700 text-white">
             Subscribe Now
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>

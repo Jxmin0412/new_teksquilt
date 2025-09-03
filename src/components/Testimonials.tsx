@@ -117,7 +117,7 @@ const Testimonials: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-full text-sm font-medium text-yellow-700 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-full text-sm font-medium text-blue-700 mb-6">
             <Sparkles className="w-4 h-4" />
             <span>Client Success Stories</span>
           </div>
@@ -126,7 +126,7 @@ const Testimonials: React.FC = () => {
               Trusted by
             </span>
             <br />
-            <span className="bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent">
               Industry Leaders
             </span>
           </h2>
@@ -167,7 +167,7 @@ const Testimonials: React.FC = () => {
               >
                 <div className="bg-white rounded-3xl shadow-xl p-8 sm:p-10 lg:p-12">
                   {/* Quote Icon */}
-                  <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center shadow-lg">
+                  <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
                     <Quote className="w-8 h-8 text-white" />
                   </div>
 
@@ -189,7 +189,7 @@ const Testimonials: React.FC = () => {
                   </blockquote>
 
                   {/* Highlight */}
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-full text-sm font-medium text-green-700 mb-8">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-full text-sm font-medium text-blue-700 mb-8">
                     <Sparkles className="w-4 h-4" />
                     {testimonials[activeIndex].highlight}
                   </div>
@@ -239,7 +239,7 @@ const Testimonials: React.FC = () => {
                   className={cn(
                     "w-2 h-2 rounded-full transition-all duration-300",
                     activeIndex === index 
-                      ? "w-8 bg-gradient-to-r from-yellow-400 to-orange-400" 
+                      ? "w-8 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600" 
                       : "bg-gray-300 hover:bg-gray-400"
                   )}
                 />

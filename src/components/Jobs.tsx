@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { 
-  MapPin, 
-  Clock, 
-  DollarSign, 
-  ArrowRight, 
+import {
+  MapPin,
+  Clock,
+  DollarSign,
+  ArrowRight,
   Briefcase,
   Building,
   Users,
@@ -13,7 +13,7 @@ import {
   Search,
   TrendingUp,
   Star,
-  Sparkles
+  Sparkles,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -43,10 +43,11 @@ const jobsData: Job[] = [
     salary: "$150k - $200k",
     department: "Engineering",
     experience: "5+ years",
-    description: "We are looking for a talented Software Engineer to join our team. The ideal candidate will have experience in developing web applications using React and Node.js.",
+    description:
+      "We are looking for a talented Software Engineer to join our team. The ideal candidate will have experience in developing web applications using React and Node.js.",
     tags: ["React", "Node.js", "TypeScript", "AWS"],
     featured: true,
-    posted: "2 days ago"
+    posted: "2 days ago",
   },
   {
     id: 2,
@@ -57,10 +58,11 @@ const jobsData: Job[] = [
     salary: "$130k - $170k",
     department: "Product",
     experience: "3-5 years",
-    description: "We are seeking an experienced Product Manager to lead the development of our new products. The successful candidate will have a proven track record of launching successful products.",
+    description:
+      "We are seeking an experienced Product Manager to lead the development of our new products. The successful candidate will have a proven track record of launching successful products.",
     tags: ["Agile", "Strategy", "Analytics", "Leadership"],
     featured: true,
-    posted: "3 days ago"
+    posted: "3 days ago",
   },
   {
     id: 3,
@@ -71,10 +73,11 @@ const jobsData: Job[] = [
     salary: "$90k - $120k",
     department: "Design",
     experience: "2-4 years",
-    description: "We are looking for a creative UX Designer to design intuitive and user-friendly interfaces for our web and mobile applications.",
+    description:
+      "We are looking for a creative UX Designer to design intuitive and user-friendly interfaces for our web and mobile applications.",
     tags: ["Figma", "User Research", "Prototyping", "Design Systems"],
     featured: false,
-    posted: "1 week ago"
+    posted: "1 week ago",
   },
   {
     id: 4,
@@ -85,10 +88,11 @@ const jobsData: Job[] = [
     salary: "$140k - $180k",
     department: "Infrastructure",
     experience: "4+ years",
-    description: "Join our infrastructure team to build and maintain scalable cloud solutions.",
+    description:
+      "Join our infrastructure team to build and maintain scalable cloud solutions.",
     tags: ["Kubernetes", "Docker", "CI/CD", "Terraform"],
     featured: true,
-    posted: "5 days ago"
+    posted: "5 days ago",
   },
   {
     id: 5,
@@ -99,10 +103,11 @@ const jobsData: Job[] = [
     salary: "$135k - $175k",
     department: "Data",
     experience: "3-5 years",
-    description: "Looking for a Data Scientist to help us derive insights from complex datasets.",
+    description:
+      "Looking for a Data Scientist to help us derive insights from complex datasets.",
     tags: ["Python", "Machine Learning", "SQL", "Statistics"],
     featured: false,
-    posted: "1 week ago"
+    posted: "1 week ago",
   },
   {
     id: 6,
@@ -113,14 +118,23 @@ const jobsData: Job[] = [
     salary: "$100k - $130k",
     department: "Marketing",
     experience: "3-5 years",
-    description: "Lead our marketing initiatives and drive growth across all channels.",
+    description:
+      "Lead our marketing initiatives and drive growth across all channels.",
     tags: ["Digital Marketing", "SEO", "Content Strategy", "Analytics"],
     featured: false,
-    posted: "2 weeks ago"
-  }
+    posted: "2 weeks ago",
+  },
 ];
 
-const departments = ["All", "Engineering", "Product", "Design", "Infrastructure", "Data", "Marketing"];
+const departments = [
+  "All",
+  "Engineering",
+  "Product",
+  "Design",
+  "Infrastructure",
+  "Data",
+  "Marketing",
+];
 const jobTypes = ["All", "Full-time", "Contract", "Remote"];
 
 const Jobs: React.FC = () => {
@@ -129,19 +143,26 @@ const Jobs: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showFilters, setShowFilters] = useState(false);
 
-  const filteredJobs = jobsData.filter(job => {
-    const matchesDepartment = selectedDepartment === "All" || job.department === selectedDepartment;
-    const matchesType = selectedType === "All" || 
-      (selectedType === "Remote" ? job.location === "Remote" : job.type === selectedType);
-    const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  const filteredJobs = jobsData.filter((job) => {
+    const matchesDepartment =
+      selectedDepartment === "All" || job.department === selectedDepartment;
+    const matchesType =
+      selectedType === "All" ||
+      (selectedType === "Remote"
+        ? job.location === "Remote"
+        : job.type === selectedType);
+    const matchesSearch =
+      job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      job.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-    
+      job.tags.some((tag) =>
+        tag.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
     return matchesDepartment && matchesType && matchesSearch;
   });
 
-  const featuredJobs = filteredJobs.filter(job => job.featured);
-  const regularJobs = filteredJobs.filter(job => !job.featured);
+  const featuredJobs = filteredJobs.filter((job) => job.featured);
+  const regularJobs = filteredJobs.filter((job) => !job.featured);
 
   return (
     <section className="py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
@@ -154,7 +175,7 @@ const Jobs: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-full text-sm font-medium text-green-700 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-full text-sm font-medium text-blue-700 mb-6">
             <Briefcase className="w-4 h-4" />
             <span>Career Opportunities</span>
           </div>
@@ -163,13 +184,13 @@ const Jobs: React.FC = () => {
               Find Your
             </span>
             <br />
-            <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent">
               Dream Job
             </span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explore exciting opportunities with top companies. 
-            We connect talented professionals with their perfect roles.
+            Explore exciting opportunities with top companies. We connect
+            talented professionals with their perfect roles.
           </p>
         </motion.div>
 
@@ -220,7 +241,9 @@ const Jobs: React.FC = () => {
               >
                 {/* Department Filter */}
                 <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">Department</label>
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">
+                    Department
+                  </label>
                   <div className="flex flex-wrap gap-2">
                     {departments.map((dept) => (
                       <button
@@ -241,7 +264,9 @@ const Jobs: React.FC = () => {
 
                 {/* Job Type Filter */}
                 <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">Job Type</label>
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">
+                    Job Type
+                  </label>
                   <div className="flex flex-wrap gap-2">
                     {jobTypes.map((type) => (
                       <button
@@ -250,7 +275,7 @@ const Jobs: React.FC = () => {
                         className={cn(
                           "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                           selectedType === type
-                            ? "bg-green-600 text-white shadow-md"
+                            ? "bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 text-white shadow-md"
                             : "bg-white border border-gray-200 text-gray-700 hover:border-gray-300"
                         )}
                       >
@@ -273,12 +298,19 @@ const Jobs: React.FC = () => {
           className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8"
         >
           {[
-            { icon: Briefcase, value: filteredJobs.length, label: "Open Positions" },
+            {
+              icon: Briefcase,
+              value: filteredJobs.length,
+              label: "Open Positions",
+            },
             { icon: Building, value: "50+", label: "Companies" },
             { icon: Users, value: "1000+", label: "Placed Candidates" },
-            { icon: TrendingUp, value: "95%", label: "Success Rate" }
+            { icon: TrendingUp, value: "95%", label: "Success Rate" },
           ].map((stat, index) => (
-            <div key={index} className="bg-white p-4 rounded-xl border border-gray-100 text-center">
+            <div
+              key={index}
+              className="bg-white p-4 rounded-xl border border-gray-100 text-center"
+            >
               <stat.icon className="w-8 h-8 mx-auto mb-2 text-gray-400" />
               <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
               <p className="text-sm text-gray-600">{stat.label}</p>
@@ -297,7 +329,9 @@ const Jobs: React.FC = () => {
           >
             <div className="flex items-center gap-2 mb-6">
               <Sparkles className="w-5 h-5 text-yellow-500" />
-              <h3 className="text-xl font-semibold text-gray-900">Featured Jobs</h3>
+              <h3 className="text-xl font-semibold text-gray-900">
+                Featured Jobs
+              </h3>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredJobs.map((job, index) => (
@@ -315,10 +349,17 @@ const Jobs: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <h3 className="text-xl font-semibold text-gray-900 mb-6">All Jobs</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-6">
+              All Jobs
+            </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {regularJobs.map((job, index) => (
-                <JobCard key={job.id} job={job} index={index} featured={false} />
+                <JobCard
+                  key={job.id}
+                  job={job}
+                  index={index}
+                  featured={false}
+                />
               ))}
             </div>
           </motion.div>
@@ -332,8 +373,12 @@ const Jobs: React.FC = () => {
             className="text-center py-12"
           >
             <Briefcase className="w-16 h-16 mx-auto mb-4 text-gray-300" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No jobs found</h3>
-            <p className="text-gray-600">Try adjusting your filters or search terms</p>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              No jobs found
+            </h3>
+            <p className="text-gray-600">
+              Try adjusting your filters or search terms
+            </p>
           </motion.div>
         )}
 
@@ -349,14 +394,22 @@ const Jobs: React.FC = () => {
             Can't find what you're looking for?
           </h3>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Submit your resume and we'll match you with opportunities that fit your skills and aspirations.
+            Submit your resume and we'll match you with opportunities that fit
+            your skills and aspirations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 hover:from-blue-700 hover:via-cyan-600 hover:to-blue-700 text-white"
+            >
               Submit Your Resume
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-gray-300 hover:border-gray-400">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-gray-300 hover:border-gray-400"
+            >
               Create Job Alert
             </Button>
           </div>
@@ -381,14 +434,14 @@ const JobCard: React.FC<JobCardProps> = ({ job, index, featured }) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={cn(
         "group relative bg-white rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1",
-        featured 
-          ? "border-2 border-yellow-200 shadow-lg hover:shadow-xl" 
+        featured
+          ? "border-2 border-blue-200 shadow-lg hover:shadow-xl"
           : "border border-gray-100 shadow hover:shadow-lg"
       )}
     >
       {/* Featured Badge */}
       {featured && (
-        <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+        <div className="absolute -top-3 -right-3 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
           <Star className="w-3 h-3" />
           Featured
         </div>
@@ -413,7 +466,9 @@ const JobCard: React.FC<JobCardProps> = ({ job, index, featured }) => {
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-600">
           <Clock className="w-4 h-4" />
-          <span>{job.type} • {job.experience}</span>
+          <span>
+            {job.type} • {job.experience}
+          </span>
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-600">
           <DollarSign className="w-4 h-4" />
@@ -444,7 +499,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, index, featured }) => {
       </div>
 
       {/* Apply Button */}
-      <Button className="w-full group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-600 transition-all duration-300">
+      <Button className="w-full group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:via-cyan-500 group-hover:to-blue-600 transition-all duration-300">
         Apply Now
         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
       </Button>

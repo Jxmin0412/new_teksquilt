@@ -9,7 +9,8 @@ import {
   ArrowRight,
   Sparkles,
   Search,
-  Filter
+  Filter,
+  Upload
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -35,7 +36,7 @@ const JobsPage: React.FC = () => {
       {/* Hero Section */}
       <section className="relative py-20 sm:py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-100 to-emerald-100 rounded-full blur-3xl opacity-30" />
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full blur-3xl opacity-30" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tr from-blue-100 to-cyan-100 rounded-full blur-3xl opacity-30" />
         </div>
 
@@ -46,7 +47,7 @@ const JobsPage: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-full text-sm font-medium text-green-700 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-full text-sm font-medium text-blue-700 mb-6">
               <Sparkles className="w-4 h-4" />
               <span>Career Opportunities</span>
             </div>
@@ -56,7 +57,7 @@ const JobsPage: React.FC = () => {
                 Discover Your
               </span>
               <br />
-              <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent">
                 Dream Career
               </span>
             </h1>
@@ -65,6 +66,25 @@ const JobsPage: React.FC = () => {
               Explore thousands of opportunities from leading companies. 
               Find the perfect role that matches your skills and ambitions.
             </p>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <Button 
+                size="lg"
+                className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 hover:from-blue-700 hover:via-cyan-600 hover:to-blue-700 text-white"
+              >
+                <Upload className="mr-2 w-5 h-5" />
+                Submit Resume
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-2 border-gray-300 hover:border-gray-400"
+              >
+                Browse All Jobs
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </div>
 
             {/* Quick Search */}
             <div className="max-w-2xl mx-auto">
@@ -75,10 +95,10 @@ const JobsPage: React.FC = () => {
                     <input
                       type="text"
                       placeholder="Job title, keywords, or company"
-                      className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-green-500 transition-colors"
+                      className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 transition-colors"
                     />
                   </div>
-                  <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8">
+                  <Button className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 hover:from-blue-700 hover:via-cyan-600 hover:to-blue-700 text-white px-8">
                     Search Jobs
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
@@ -114,8 +134,8 @@ const JobsPage: React.FC = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-white rounded-2xl shadow-lg p-6 text-center"
                 >
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-green-100 to-emerald-100 rounded-xl mb-3">
-                    <Icon className="w-6 h-6 text-green-600" />
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl mb-3">
+                    <Icon className="w-6 h-6 text-blue-600" />
                   </div>
                   <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
                   <p className="text-sm text-gray-600">{stat.label}</p>
@@ -158,7 +178,7 @@ const JobsPage: React.FC = () => {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 group-hover:text-green-600 transition-colors">
+                    <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
                       {category.name}
                     </h3>
                     <p className="text-sm text-gray-600 mt-1">
@@ -171,7 +191,7 @@ const JobsPage: React.FC = () => {
                     </span>
                   )}
                 </div>
-                <div className="flex items-center text-green-600 group-hover:translate-x-2 transition-transform">
+                <div className="flex items-center text-blue-600 group-hover:translate-x-2 transition-transform">
                   <span className="text-sm font-medium">View jobs</span>
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </div>
@@ -236,10 +256,10 @@ const JobsPage: React.FC = () => {
                   className="text-center"
                 >
                   <div className="relative inline-block mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl flex items-center justify-center">
-                      <Icon className="w-10 h-10 text-green-600" />
+                    <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center">
+                      <Icon className="w-10 h-10 text-blue-600" />
                     </div>
-                    <span className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    <span className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
                       {item.step}
                     </span>
                   </div>
@@ -253,7 +273,7 @@ const JobsPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 sm:py-24 bg-gradient-to-r from-green-600 to-emerald-600">
+      <section className="py-20 sm:py-24 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -270,7 +290,7 @@ const JobsPage: React.FC = () => {
               Your next opportunity is just a click away.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
                 Create Free Account
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>

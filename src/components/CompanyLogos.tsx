@@ -24,7 +24,7 @@ const CompanyLogos: React.FC = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-full blur-3xl opacity-50" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-purple-50 to-pink-50 rounded-full blur-3xl opacity-50" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-50 to-cyan-50 rounded-full blur-3xl opacity-50" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -45,7 +45,7 @@ const CompanyLogos: React.FC = () => {
               Trusted by
             </span>
             {" "}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent">
               Leading Companies
             </span>
           </h2>
@@ -199,7 +199,7 @@ const CompanyLogos: React.FC = () => {
             Join these industry leaders in finding your perfect talent match
           </p>
           <div className="inline-flex items-center gap-4">
-            <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl">
+            <button className="px-6 py-3 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 hover:from-blue-700 hover:via-cyan-600 hover:to-blue-700 text-white rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl">
               Become a Partner
             </button>
             <button className="px-6 py-3 border-2 border-gray-300 hover:border-gray-400 rounded-xl font-medium transition-all duration-300">

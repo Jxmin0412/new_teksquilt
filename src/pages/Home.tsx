@@ -1,13 +1,11 @@
 import { useEffect } from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Link } from "react-router-dom";
 import Services from "../components/Services";
 import Jobs from "../components/Jobs";
 import Testimonials from "../components/Testimonials";
 import Articles from "../components/Articles";
 import Newsletter from "../components/Newsletter";
-import CompanyLogos from "../components/CompanyLogos";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, TrendingUp } from "lucide-react";
 
@@ -25,7 +23,7 @@ const Home = () => {
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    visible: { opacity: 1, y: 0 },
   };
 
   const staggerContainer = {
@@ -33,9 +31,9 @@ const Home = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   return (
@@ -45,7 +43,7 @@ const Home = () => {
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full blur-3xl opacity-30" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-100 to-pink-100 rounded-full blur-3xl opacity-30" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-blue-100 to-cyan-100 rounded-full blur-3xl opacity-30" />
         </div>
 
         <div className="container mx-auto relative z-10">
@@ -56,7 +54,7 @@ const Home = () => {
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
             {/* Left Content */}
-            <motion.div 
+            <motion.div
               style={{ y: y1 }}
               className="text-center lg:text-left space-y-6"
             >
@@ -88,8 +86,8 @@ const Home = () => {
                 variants={fadeInUp}
                 className="text-lg sm:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0"
               >
-                Connecting exceptional talent with visionary companies. 
-                Build your dream team or advance your career with our expertise.
+                Connecting exceptional talent with visionary companies. Build
+                your dream team or advance your career with our expertise.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -97,14 +95,14 @@ const Home = () => {
                 variants={fadeInUp}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
-                <Button 
+                <Button
                   size="lg"
-                  className="group bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="group bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 hover:from-blue-700 hover:via-cyan-600 hover:to-blue-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   Find Talent
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button 
+                <Button
                   size="lg"
                   variant="outline"
                   className="border-2 border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-6 text-lg rounded-xl transition-all duration-300"
@@ -121,10 +119,12 @@ const Home = () => {
                 {[
                   { value: "10K+", label: "Placements" },
                   { value: "98%", label: "Success Rate" },
-                  { value: "24/7", label: "Support" }
+                  { value: "24/7", label: "Support" },
                 ].map((stat, index) => (
                   <div key={index} className="text-center lg:text-left">
-                    <p className="text-2xl sm:text-3xl font-bold text-gray-900">{stat.value}</p>
+                    <p className="text-2xl sm:text-3xl font-bold text-gray-900">
+                      {stat.value}
+                    </p>
                     <p className="text-sm text-gray-600">{stat.label}</p>
                   </div>
                 ))}
@@ -149,7 +149,7 @@ const Home = () => {
                   poster="/hero-poster.jpg"
                 />
               </div>
-              
+
               {/* Floating Card */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -157,7 +157,7 @@ const Home = () => {
                 transition={{ delay: 1, duration: 0.5 }}
                 className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 flex items-center gap-3"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
                   <TrendingUp className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -173,7 +173,12 @@ const Home = () => {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+          transition={{
+            delay: 2,
+            duration: 1,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
@@ -188,7 +193,6 @@ const Home = () => {
       <Testimonials />
       <Articles />
       <Newsletter />
-      <CompanyLogos />
     </div>
   );
 };
